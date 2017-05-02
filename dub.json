@@ -1,0 +1,12 @@
+{
+	"name": "parsed",
+	"authors": [
+		"tosuke"
+	],
+	"description": "The PEG based parser combinator for dlang",
+	"copyright": "Copyright © 2017, tosuke",
+	"license": "MIT",
+
+	"targetPath": "bin",
+	"workingDirectory": "bin"
+}
