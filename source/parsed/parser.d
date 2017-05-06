@@ -21,7 +21,7 @@ template isParser(alias parser, S = string) if(isSomeString!S) {
   }));
 }
 
-template isParser(Parser, S) if(isSomeString!S) {
+template isParser(Parser, S = string) if(isSomeString!S) {
   private Parser parser = void;
   enum isParser = isParser!(parser, S);
 }
@@ -50,7 +50,7 @@ template ParserType(alias parser, S = string) if(isSomeString!S) {
   }
 }
 
-template ParserType(Parser, S) if(isSomeString!S) {
+template ParserType(Parser, S = string) if(isSomeString!S) {
   private Parser parser = void;
   alias ParserType = ParserType!(parser, S);
 }

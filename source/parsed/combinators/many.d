@@ -7,7 +7,7 @@ import std.conv : to;
 import std.array : appender;
 
 
-nothrow pure @safe @nogc auto many(Parser)(Parser parser, size_t atLeast = 0) if(isSomeParser!Parser) {
+nothrow pure @safe @nogc ManyParser!Parser many(Parser)(Parser parser, size_t atLeast = 0) if(isSomeParser!Parser) {
   return ManyParser!Parser(parser, atLeast);
 }
 
