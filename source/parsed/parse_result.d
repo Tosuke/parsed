@@ -45,20 +45,16 @@ public:
   alias result this;
 package:
   /// success
-  pure nothrow @safe @nogc this(T value, size_t matchedLength) {
+  pure nothrow @trusted @nogc this(T value, size_t matchedLength) {
     this.success_ = true;
-    () @trusted {
-      this.result_.v = value;
-    }();
+    this.result_.v = value;
     this.matchedLength_ = matchedLength;
   }
 
   /// failure
-  pure nothrow @safe @nogc this(ParseError err) {
+  pure nothrow @trusted @nogc this(ParseError err) {
     this.success_ = false;
-    () @trusted {
-      this.result_.e = err;
-    }();
+    this.result_.e = err;
     this.matchedLength_ = 0;
   }
 private:
